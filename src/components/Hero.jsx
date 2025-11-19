@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, OrbitControls } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
@@ -139,6 +139,22 @@ function FloatingCone() {
 }
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.matchMedia('(max-width: 768px)').matches ||
+                     'ontouchstart' in window ||
+                     navigator.maxTouchPoints > 0;
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -183,7 +199,11 @@ const Hero = () => {
           <FloatingOctahedron />
           <FloatingIcosahedron />
           <FloatingCone />
-          <OrbitControls enableZoom={false} enablePan={false} />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enabled={!isMobile}
+          />
         </Canvas>
       </div>
 
