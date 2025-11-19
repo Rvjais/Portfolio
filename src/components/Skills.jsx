@@ -42,28 +42,24 @@ const Skills = () => {
     {
       name: 'MongoDB',
       icon: '🍃',
-      level: 85,
       description: 'NoSQL database for scalable applications',
       color: '#47A248'
     },
     {
       name: 'Express.js',
       icon: '⚡',
-      level: 80,
       description: 'Fast, minimalist web framework',
       color: '#000000'
     },
     {
       name: 'React.js',
       icon: '⚛️',
-      level: 90,
       description: 'Building dynamic user interfaces',
       color: '#61DAFB'
     },
     {
       name: 'Node.js',
       icon: '🟢',
-      level: 85,
       description: 'JavaScript runtime for backend',
       color: '#339933'
     }
@@ -73,28 +69,24 @@ const Skills = () => {
     {
       name: 'AI Integration',
       icon: '🤖',
-      level: 75,
       description: 'Integrating AI APIs and models',
       color: '#FF6B6B'
     },
     {
       name: 'Automation',
       icon: '⚙️',
-      level: 80,
       description: 'Workflow automation and scripting',
       color: '#4ECDC4'
     },
     {
       name: 'Machine Learning',
       icon: '🧠',
-      level: 70,
       description: 'ML concepts and implementation',
       color: '#95E1D3'
     },
     {
       name: 'AI Tools',
       icon: '🛠️',
-      level: 75,
       description: 'OpenAI, Hugging Face, TensorFlow',
       color: '#F38181'
     }
@@ -131,26 +123,14 @@ const Skills = () => {
                   key={skill.name}
                   className="skill-card interactive glass"
                   variants={itemVariants}
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
                   <div className="skill-header">
-                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-icon" style={{ filter: `drop-shadow(0 4px 8px ${skill.color}80)` }}>{skill.icon}</span>
                     <div className="skill-info">
                       <h4>{skill.name}</h4>
                       <p>{skill.description}</p>
                     </div>
-                  </div>
-                  <div className="skill-progress">
-                    <div className="progress-bar">
-                      <motion.div
-                        className="progress-fill"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        style={{ background: skill.color }}
-                      />
-                    </div>
-                    <span className="progress-label">{skill.level}%</span>
                   </div>
                 </motion.div>
               ))}
@@ -168,26 +148,14 @@ const Skills = () => {
                   key={skill.name}
                   className="skill-card interactive glass"
                   variants={itemVariants}
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
                   <div className="skill-header">
-                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-icon" style={{ filter: `drop-shadow(0 4px 8px ${skill.color}80)` }}>{skill.icon}</span>
                     <div className="skill-info">
                       <h4>{skill.name}</h4>
                       <p>{skill.description}</p>
                     </div>
-                  </div>
-                  <div className="skill-progress">
-                    <div className="progress-bar">
-                      <motion.div
-                        className="progress-fill"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        style={{ background: skill.color }}
-                      />
-                    </div>
-                    <span className="progress-label">{skill.level}%</span>
                   </div>
                 </motion.div>
               ))}
