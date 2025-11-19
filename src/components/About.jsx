@@ -93,7 +93,7 @@ const About = () => {
               <div className="profile-ring"></div>
               <div className="profile-ring-2"></div>
               <div className="profile-ring-3"></div>
-              <img src="/profile.svg" alt="Ranveer Jaiswal" className="profile-image" />
+              <img src="/profile.jpeg" alt="Ranveer Jaiswal" className="profile-image" />
               <div className="profile-badge glass">
                 <span className="badge-icon">💻</span>
                 <span className="badge-text">Developer</span>
