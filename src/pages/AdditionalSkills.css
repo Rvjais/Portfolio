@@ -106,44 +106,43 @@
 .skill-item {
   padding: 20px;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .skill-item:hover {
   box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
 }
 
-.skill-item-header {
+.skill-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.skill-item-header h4 {
+.skill-item:hover .skill-badge {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.skill-name {
   font-size: 16px;
   color: var(--light);
   font-weight: 600;
-}
-
-.skill-level {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.skill-bar {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px currentColor;
-  transition: width 1s ease;
+  margin: 0;
 }
 
 /* Hobbies Section */
@@ -296,6 +295,104 @@
   border-color: rgba(99, 102, 241, 0.5);
 }
 
+/* Videos Section */
+.videos-section {
+  margin: 100px 0 80px;
+}
+
+.videos-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.videos-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: var(--light);
+  margin-bottom: 15px;
+}
+
+.videos-description {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.video-card {
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-info {
+  padding: 25px;
+}
+
+.video-info h3 {
+  font-size: 20px;
+  color: var(--light);
+  margin-bottom: 12px;
+}
+
+.video-info p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.video-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.video-tag {
+  padding: 6px 14px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 15px;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.video-card:hover .video-tag {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
 .skills-footer {
   text-align: center;
   margin-top: 60px;
@@ -396,6 +493,18 @@
 
   .hobby-card {
     padding: 30px 25px;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .videos-section {
+    margin: 60px 0 60px;
+  }
+
+  .video-info {
+    padding: 20px;
   }
 
   .footer-content {

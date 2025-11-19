@@ -1,17 +1,40 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import './About.css';
 
 const About = () => {
   const ref = useRef(null);
+  const profileRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const controls = useAnimation();
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
     }
   }, [isInView, controls]);
+
+  const handleMouseMove = (e) => {
+    if (!profileRef.current) return;
+
+    const rect = profileRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+
+    // Calculate rotation based on mouse position (max 20 degrees)
+    const rotateY = (mouseX / rect.width) * 20;
+    const rotateX = -(mouseY / rect.height) * 20;
+
+    setRotation({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -52,7 +75,16 @@ const About = () => {
         </motion.div>
 
         <motion.div className="profile-section" variants={itemVariants}>
-          <div className="profile-image-container">
+          <div
+            ref={profileRef}
+            className="profile-image-container"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+              transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+              transition: 'transform 0.1s ease-out'
+            }}
+          >
             <div className="profile-ring"></div>
             <div className="profile-ring-2"></div>
             <img src="/profile.svg" alt="Ranveer Jaiswal" className="profile-image" />

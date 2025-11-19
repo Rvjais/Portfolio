@@ -83,20 +83,6 @@ const AdditionalSkills = () => {
       ]
     },
     {
-      title: 'DevOps & Tools',
-      icon: '🛠️',
-      skills: [
-        { name: 'Git & GitHub', level: 90, color: '#f05032' },
-        { name: 'Docker', level: 65, color: '#2496ed' },
-        { name: 'VS Code', level: 95, color: '#007acc' },
-        { name: 'Postman', level: 85, color: '#ff6c37' },
-        { name: 'NPM/Yarn', level: 90, color: '#cb3837' },
-        { name: 'Webpack/Vite', level: 75, color: '#646cff' },
-        { name: 'Linux/Ubuntu', level: 70, color: '#e95420' },
-        { name: 'AWS Basics', level: 60, color: '#ff9900' }
-      ]
-    },
-    {
       title: 'AI & Automation',
       icon: '🤖',
       skills: [
@@ -191,20 +177,10 @@ const AdditionalSkills = () => {
                     variants={itemVariants}
                     whileHover={{ y: -10, scale: 1.05 }}
                   >
-                    <div className="skill-item-header">
-                      <h4>{skill.name}</h4>
-                      <span className="skill-level">{skill.level}%</span>
+                    <div className="skill-badge" style={{ backgroundColor: skill.color }}>
+                      <span className="skill-icon">✓</span>
                     </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-bar-fill"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: skillIndex * 0.05 }}
-                        style={{ backgroundColor: skill.color }}
-                      />
-                    </div>
+                    <h4 className="skill-name">{skill.name}</h4>
                   </motion.div>
                 ))}
               </div>
@@ -323,6 +299,122 @@ const AdditionalSkills = () => {
               <div className="hobby-tags">
                 <span className="hobby-tag">Adventure</span>
                 <span className="hobby-tag">Culture</span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Video Showcase Section */}
+        <motion.div className="videos-section" variants={itemVariants}>
+          <div className="section-divider">
+            <span className="divider-line"></span>
+            <span className="divider-text">Skills in Action</span>
+            <span className="divider-line"></span>
+          </div>
+
+          <div className="videos-header">
+            <h2 className="videos-title">
+              Video <span className="gradient-text">Showcase</span>
+            </h2>
+            <p className="videos-description">
+              Watch me in action! Here are some videos showcasing my skills beyond coding
+            </p>
+          </div>
+
+          <div className="videos-grid">
+            <motion.div
+              className="video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Dance Performance"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-info">
+                <h3>💃 Dance Performance</h3>
+                <p>Contemporary dance routine showcasing rhythm and creativity</p>
+                <div className="video-tags">
+                  <span className="video-tag">Dance</span>
+                  <span className="video-tag">Performance</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Martial Arts Demo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-info">
+                <h3>🥋 Martial Arts Demo</h3>
+                <p>Karate techniques and forms demonstration</p>
+                <div className="video-tags">
+                  <span className="video-tag">Martial Arts</span>
+                  <span className="video-tag">Discipline</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Music Performance"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-info">
+                <h3>🎵 Music Performance</h3>
+                <p>Guitar cover of a popular song</p>
+                <div className="video-tags">
+                  <span className="video-tag">Music</span>
+                  <span className="video-tag">Guitar</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+            >
+              <div className="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Project Demo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-info">
+                <h3>💻 Coding Project Demo</h3>
+                <p>Walkthrough of a full-stack MERN application</p>
+                <div className="video-tags">
+                  <span className="video-tag">Coding</span>
+                  <span className="video-tag">MERN Stack</span>
+                </div>
               </div>
             </motion.div>
           </div>
