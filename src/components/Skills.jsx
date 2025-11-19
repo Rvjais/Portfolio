@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Background3D from './Background3D';
 import './Skills.css';
 
 const Skills = () => {
@@ -101,6 +102,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills" ref={ref}>
+      <Background3D />
       <motion.div
         className="skills-container"
         variants={containerVariants}

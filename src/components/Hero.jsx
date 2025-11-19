@@ -72,6 +72,72 @@ function FloatingBox() {
   );
 }
 
+function FloatingOctahedron() {
+  const meshRef = useRef();
+
+  useFrame((state) => {
+    meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.4;
+    meshRef.current.rotation.z = state.clock.getElapsedTime() * 0.2;
+    meshRef.current.position.y = Math.cos(state.clock.getElapsedTime() * 0.8) * 0.3;
+  });
+
+  return (
+    <mesh ref={meshRef} position={[0, -1.5, 0]}>
+      <octahedronGeometry args={[0.6]} />
+      <meshStandardMaterial
+        color="#f59e0b"
+        emissive="#f59e0b"
+        emissiveIntensity={0.5}
+        wireframe
+      />
+    </mesh>
+  );
+}
+
+function FloatingIcosahedron() {
+  const meshRef = useRef();
+
+  useFrame((state) => {
+    meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.6;
+    meshRef.current.rotation.z = state.clock.getElapsedTime() * 0.3;
+    meshRef.current.position.x = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3;
+  });
+
+  return (
+    <mesh ref={meshRef} position={[1, 1.5, -1]}>
+      <icosahedronGeometry args={[0.5]} />
+      <meshStandardMaterial
+        color="#10b981"
+        emissive="#10b981"
+        emissiveIntensity={0.5}
+        wireframe
+      />
+    </mesh>
+  );
+}
+
+function FloatingCone() {
+  const meshRef = useRef();
+
+  useFrame((state) => {
+    meshRef.current.rotation.z = state.clock.getElapsedTime() * 0.4;
+    meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.5;
+    meshRef.current.position.y = Math.sin(state.clock.getElapsedTime() * 1.2) * 0.2;
+  });
+
+  return (
+    <mesh ref={meshRef} position={[-1.5, -1, -0.5]}>
+      <coneGeometry args={[0.4, 0.8, 4]} />
+      <meshStandardMaterial
+        color="#06b6d4"
+        emissive="#06b6d4"
+        emissiveIntensity={0.5}
+        wireframe
+      />
+    </mesh>
+  );
+}
+
 const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,9 +176,13 @@ const Hero = () => {
         <Canvas camera={{ position: [0, 0, 1] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ec4899" />
           <StarField />
           <RotatingTorus />
           <FloatingBox />
+          <FloatingOctahedron />
+          <FloatingIcosahedron />
+          <FloatingCone />
           <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
       </div>

@@ -212,6 +212,122 @@ const AdditionalSkills = () => {
           ))}
         </div>
 
+        {/* Hobbies & Interests Section */}
+        <motion.div className="hobbies-section" variants={itemVariants}>
+          <div className="section-divider">
+            <span className="divider-line"></span>
+            <span className="divider-text">Beyond Coding</span>
+            <span className="divider-line"></span>
+          </div>
+
+          <div className="hobbies-header">
+            <h2 className="hobbies-title">
+              Hobbies & <span className="gradient-text">Interests</span>
+            </h2>
+            <p className="hobbies-description">
+              When I'm not coding, I love exploring different passions that keep me balanced and creative
+            </p>
+          </div>
+
+          <div className="hobbies-grid">
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: 2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">🎵</span>
+              </div>
+              <h3>Music</h3>
+              <p>Playing instruments and exploring different genres keeps my creative mind active</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Guitar</span>
+                <span className="hobby-tag">Piano</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: -2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">🥋</span>
+              </div>
+              <h3>Martial Arts</h3>
+              <p>Practicing discipline, focus, and physical fitness through martial arts training</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Karate</span>
+                <span className="hobby-tag">Self-Defense</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: 2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">💃</span>
+              </div>
+              <h3>Dance</h3>
+              <p>Expressing creativity and staying energetic through various dance forms</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Hip-Hop</span>
+                <span className="hobby-tag">Contemporary</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: -2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">📚</span>
+              </div>
+              <h3>Reading</h3>
+              <p>Expanding knowledge through tech blogs, self-improvement books, and novels</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Tech Blogs</span>
+                <span className="hobby-tag">Fiction</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: 2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">🎮</span>
+              </div>
+              <h3>Gaming</h3>
+              <p>Enjoying strategy games and learning problem-solving through interactive experiences</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Strategy</span>
+                <span className="hobby-tag">Puzzle</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotateZ: -2 }}
+            >
+              <div className="hobby-icon-wrapper">
+                <span className="hobby-icon">✈️</span>
+              </div>
+              <h3>Travel</h3>
+              <p>Exploring new places, cultures, and gaining diverse perspectives</p>
+              <div className="hobby-tags">
+                <span className="hobby-tag">Adventure</span>
+                <span className="hobby-tag">Culture</span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
         <motion.div className="skills-footer" variants={itemVariants}>
           <div className="footer-content glass">
             <h3>Continuous Learning</h3>

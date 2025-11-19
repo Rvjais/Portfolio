@@ -1,0 +1,61 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd1a9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb380;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="80" cy="100" r="30" fill="#ffffff" opacity="0.1"/>
+  <circle cx="320" cy="120" r="40" fill="#ffffff" opacity="0.1"/>
+  <circle cx="100" cy="300" r="25" fill="#ffffff" opacity="0.1"/>
+  <circle cx="340" cy="280" r="35" fill="#ffffff" opacity="0.1"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="180" rx="70" ry="85" fill="url(#faceGrad)"/>
+
+  <!-- Hair -->
+  <path d="M 130 150 Q 130 100 200 100 Q 270 100 270 150 Q 270 120 260 110 Q 250 100 200 95 Q 150 100 140 110 Q 130 120 130 150 Z" fill="#2d1b00"/>
+
+  <!-- Ears -->
+  <ellipse cx="130" cy="180" rx="15" ry="20" fill="#ffb380"/>
+  <ellipse cx="270" cy="180" rx="15" ry="20" fill="#ffb380"/>
+
+  <!-- Eyes -->
+  <ellipse cx="175" cy="170" rx="8" ry="12" fill="#2d1b00"/>
+  <ellipse cx="225" cy="170" rx="8" ry="12" fill="#2d1b00"/>
+  <circle cx="176" cy="168" r="3" fill="#ffffff"/>
+  <circle cx="226" cy="168" r="3" fill="#ffffff"/>
+
+  <!-- Eyebrows -->
+  <path d="M 160 155 Q 175 150 190 155" stroke="#2d1b00" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 210 155 Q 225 150 240 155" stroke="#2d1b00" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M 200 185 L 195 200 L 205 200 Z" fill="#ffb380" opacity="0.3"/>
+
+  <!-- Smile -->
+  <path d="M 180 205 Q 200 215 220 205" stroke="#2d1b00" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Body/Shoulders -->
+  <path d="M 130 265 Q 130 280 150 290 L 250 290 Q 270 280 270 265 L 270 240 Q 200 260 130 240 Z" fill="#6366f1"/>
+
+  <!-- Collar -->
+  <path d="M 185 265 L 180 285 L 220 285 L 215 265 Z" fill="#ffffff" opacity="0.9"/>
+
+  <!-- Tech elements -->
+  <text x="200" y="350" font-family="monospace" font-size="16" fill="#ffffff" text-anchor="middle" opacity="0.8">{ MERN + AI }</text>
+
+  <!-- Code brackets decoration -->
+  <text x="50" y="200" font-family="monospace" font-size="40" fill="#ffffff" opacity="0.2">&lt;/&gt;</text>
+  <text x="310" y="200" font-family="monospace" font-size="40" fill="#ffffff" opacity="0.2">{ }</text>
+</svg>

@@ -51,6 +51,18 @@ const About = () => {
           </h2>
         </motion.div>
 
+        <motion.div className="profile-section" variants={itemVariants}>
+          <div className="profile-image-container">
+            <div className="profile-ring"></div>
+            <div className="profile-ring-2"></div>
+            <img src="/profile.svg" alt="Ranveer Jaiswal" className="profile-image" />
+            <div className="profile-badge glass">
+              <span className="badge-icon">💻</span>
+              <span className="badge-text">Developer</span>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="about-content">
           <motion.div className="about-text" variants={itemVariants}>
             <div className="about-card glass">
