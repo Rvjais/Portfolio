@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -26,6 +26,20 @@ function AnimatedSphere({ position, color }) {
 }
 
 const AdditionalSkills = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -135,7 +149,8 @@ const AdditionalSkills = () => {
           <AnimatedSphere position={[-2, 0, 0]} color="#6366f1" />
           <AnimatedSphere position={[2, 0, 0]} color="#ec4899" />
           <AnimatedSphere position={[0, 2, -2]} color="#8b5cf6" />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+          {/* Only enable OrbitControls on desktop to prevent scroll interference on mobile */}
+          {!isMobile && <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />}
         </Canvas>
       </div>
 

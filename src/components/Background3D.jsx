@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere } from '@react-three/drei';
 import './Background3D.css';
@@ -47,6 +47,20 @@ function FloatingRing({ position, color, speed = 1 }) {
 }
 
 const Background3D = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="background-3d">
       <Canvas camera={{ position: [0, 0, 5] }}>
@@ -62,12 +76,15 @@ const Background3D = () => {
         <FloatingRing position={[-2, -2, -2]} color="#10b981" speed={0.6} />
         <FloatingRing position={[2, 1, -3]} color="#f59e0b" speed={0.9} />
 
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          autoRotate
-          autoRotateSpeed={0.3}
-        />
+        {/* Only enable OrbitControls on desktop to prevent scroll interference on mobile */}
+        {!isMobile && (
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            autoRotate
+            autoRotateSpeed={0.3}
+          />
+        )}
       </Canvas>
     </div>
   );

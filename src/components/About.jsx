@@ -8,6 +8,21 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const controls = useAnimation();
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.matchMedia('(max-width: 768px)').matches ||
+                     'ontouchstart' in window ||
+                     navigator.maxTouchPoints > 0;
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -15,8 +30,38 @@ const About = () => {
     }
   }, [isInView, controls]);
 
+  // Handle scroll-based animation for mobile
+  useEffect(() => {
+    if (!isMobile || !profileRef.current) return;
+
+    const handleScroll = () => {
+      if (!profileRef.current) return;
+
+      const rect = profileRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate scroll progress when element is in viewport
+      const elementCenter = rect.top + rect.height / 2;
+      const viewportCenter = windowHeight / 2;
+      const distance = elementCenter - viewportCenter;
+
+      // Normalize distance to rotation values (-30 to 30 degrees)
+      const maxDistance = windowHeight / 2;
+      const rotateX = -(distance / maxDistance) * 15; // Reduced rotation for smoother effect
+      const rotateY = Math.sin(window.scrollY * 0.002) * 15;
+      const translateZ = rect.top < windowHeight && rect.bottom > 0 ? 20 : 0;
+
+      setRotation({ x: rotateX, y: rotateY, z: translateZ });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
+
   const handleMouseMove = (e) => {
-    if (!profileRef.current) return;
+    if (isMobile || !profileRef.current) return; // Disable on mobile
 
     const rect = profileRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -36,6 +81,7 @@ const About = () => {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return; // Disable on mobile
     setRotation({ x: 0, y: 0, z: 0 });
   };
 
