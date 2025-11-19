@@ -25,9 +25,9 @@ const About = () => {
     const mouseX = e.clientX - centerX;
     const mouseY = e.clientY - centerY;
 
-    // Calculate rotation based on mouse position (max 20 degrees)
-    const rotateY = (mouseX / rect.width) * 20;
-    const rotateX = -(mouseY / rect.height) * 20;
+    // Calculate rotation based on mouse position (max 25 degrees for more dramatic effect)
+    const rotateY = (mouseX / (rect.width / 2)) * 25;
+    const rotateX = -(mouseY / (rect.height / 2)) * 25;
 
     setRotation({ x: rotateX, y: rotateY });
   };
@@ -75,22 +75,26 @@ const About = () => {
         </motion.div>
 
         <motion.div className="profile-section" variants={itemVariants}>
-          <div
-            ref={profileRef}
-            className="profile-image-container"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-              transition: 'transform 0.1s ease-out'
-            }}
-          >
-            <div className="profile-ring"></div>
-            <div className="profile-ring-2"></div>
-            <img src="/profile.svg" alt="Ranveer Jaiswal" className="profile-image" />
-            <div className="profile-badge glass">
-              <span className="badge-icon">💻</span>
-              <span className="badge-text">Developer</span>
+          <div className="profile-3d-wrapper">
+            <div
+              ref={profileRef}
+              className="profile-image-container"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                transform: `perspective(1200px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) translateZ(20px)`,
+                transition: 'transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              <div className="profile-glow"></div>
+              <div className="profile-ring"></div>
+              <div className="profile-ring-2"></div>
+              <div className="profile-ring-3"></div>
+              <img src="/profile.svg" alt="Ranveer Jaiswal" className="profile-image" />
+              <div className="profile-badge glass">
+                <span className="badge-icon">💻</span>
+                <span className="badge-text">Developer</span>
+              </div>
             </div>
           </div>
         </motion.div>

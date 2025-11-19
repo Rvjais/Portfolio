@@ -325,23 +325,32 @@ const AdditionalSkills = () => {
             <motion.div
               className="video-card interactive glass"
               variants={itemVariants}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Dance Performance"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div className="video-thumbnail-wrapper">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Dance Performance"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="video-overlay">
+                  <div className="play-icon">▶</div>
+                </div>
               </div>
               <div className="video-info">
+                <div className="video-category">Dance</div>
                 <h3>💃 Dance Performance</h3>
                 <p>Contemporary dance routine showcasing rhythm and creativity</p>
                 <div className="video-tags">
                   <span className="video-tag">Dance</span>
                   <span className="video-tag">Performance</span>
+                  <span className="video-tag">Creativity</span>
                 </div>
               </div>
             </motion.div>
@@ -349,23 +358,32 @@ const AdditionalSkills = () => {
             <motion.div
               className="video-card interactive glass"
               variants={itemVariants}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Martial Arts Demo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div className="video-thumbnail-wrapper">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Martial Arts Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="video-overlay">
+                  <div className="play-icon">▶</div>
+                </div>
               </div>
               <div className="video-info">
+                <div className="video-category">Martial Arts</div>
                 <h3>🥋 Martial Arts Demo</h3>
                 <p>Karate techniques and forms demonstration</p>
                 <div className="video-tags">
                   <span className="video-tag">Martial Arts</span>
                   <span className="video-tag">Discipline</span>
+                  <span className="video-tag">Fitness</span>
                 </div>
               </div>
             </motion.div>
@@ -373,23 +391,32 @@ const AdditionalSkills = () => {
             <motion.div
               className="video-card interactive glass"
               variants={itemVariants}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Music Performance"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div className="video-thumbnail-wrapper">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Music Performance"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="video-overlay">
+                  <div className="play-icon">▶</div>
+                </div>
               </div>
               <div className="video-info">
+                <div className="video-category">Music</div>
                 <h3>🎵 Music Performance</h3>
                 <p>Guitar cover of a popular song</p>
                 <div className="video-tags">
                   <span className="video-tag">Music</span>
                   <span className="video-tag">Guitar</span>
+                  <span className="video-tag">Cover</span>
                 </div>
               </div>
             </motion.div>
@@ -397,23 +424,32 @@ const AdditionalSkills = () => {
             <motion.div
               className="video-card interactive glass"
               variants={itemVariants}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Project Demo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div className="video-thumbnail-wrapper">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Project Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="video-overlay">
+                  <div className="play-icon">▶</div>
+                </div>
               </div>
               <div className="video-info">
+                <div className="video-category">Coding</div>
                 <h3>💻 Coding Project Demo</h3>
                 <p>Walkthrough of a full-stack MERN application</p>
                 <div className="video-tags">
                   <span className="video-tag">Coding</span>
                   <span className="video-tag">MERN Stack</span>
+                  <span className="video-tag">Full-Stack</span>
                 </div>
               </div>
             </motion.div>
