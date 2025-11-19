@@ -141,17 +141,15 @@ function FloatingCone() {
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect if device is mobile
   useEffect(() => {
+    // Detect if device is mobile
     const checkMobile = () => {
-      const mobile = window.matchMedia('(max-width: 768px)').matches ||
-                     'ontouchstart' in window ||
-                     navigator.maxTouchPoints > 0;
-      setIsMobile(mobile);
+      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
     };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -199,11 +197,8 @@ const Hero = () => {
           <FloatingOctahedron />
           <FloatingIcosahedron />
           <FloatingCone />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            enabled={!isMobile}
-          />
+          {/* Only enable OrbitControls on desktop to prevent scroll interference on mobile */}
+          {!isMobile && <OrbitControls enableZoom={false} enablePan={false} />}
         </Canvas>
       </div>
 
