@@ -7,7 +7,7 @@ const About = () => {
   const profileRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const controls = useAnimation();
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
 
   useEffect(() => {
     if (isInView) {
@@ -25,15 +25,18 @@ const About = () => {
     const mouseX = e.clientX - centerX;
     const mouseY = e.clientY - centerY;
 
-    // Calculate rotation based on mouse position (max 25 degrees for more dramatic effect)
-    const rotateY = (mouseX / (rect.width / 2)) * 25;
-    const rotateX = -(mouseY / (rect.height / 2)) * 25;
+    // Calculate rotation based on mouse position with enhanced 3D effect (max 30 degrees)
+    const rotateY = (mouseX / (rect.width / 2)) * 30;
+    const rotateX = -(mouseY / (rect.height / 2)) * 30;
 
-    setRotation({ x: rotateX, y: rotateY });
+    // Add depth translation based on cursor position
+    const translateZ = 40;
+
+    setRotation({ x: rotateX, y: rotateY, z: translateZ });
   };
 
   const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
+    setRotation({ x: 0, y: 0, z: 0 });
   };
 
   const containerVariants = {
@@ -82,8 +85,8 @@ const About = () => {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{
-                transform: `perspective(1200px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) translateZ(20px)`,
-                transition: 'transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)'
+                transform: `perspective(1500px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) translateZ(${rotation.z}px) scale(${rotation.z > 0 ? 1.05 : 1})`,
+                transition: 'transform 0.2s cubic-bezier(0.23, 1, 0.32, 1)'
               }}
             >
               <div className="profile-glow"></div>

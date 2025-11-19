@@ -188,8 +188,8 @@ const AdditionalSkills = () => {
           ))}
         </div>
 
-        {/* Hobbies & Interests Section */}
-        <motion.div className="hobbies-section" variants={itemVariants}>
+        {/* Hobbies & Video Showcase Section */}
+        <motion.div className="hobbies-video-section" variants={itemVariants}>
           <div className="section-divider">
             <span className="divider-line"></span>
             <span className="divider-text">Beyond Coding</span>
@@ -201,200 +201,17 @@ const AdditionalSkills = () => {
               Hobbies & <span className="gradient-text">Interests</span>
             </h2>
             <p className="hobbies-description">
-              When I'm not coding, I love exploring different passions that keep me balanced and creative
+              When I'm not coding, I love exploring different passions that keep me balanced and creative. Watch me in action!
             </p>
           </div>
 
-          <div className="hobbies-grid">
+          <div className="hobbies-video-grid">
             <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: 2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">🎵</span>
-              </div>
-              <h3>Music</h3>
-              <p>Playing instruments and exploring different genres keeps my creative mind active</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Guitar</span>
-                <span className="hobby-tag">Piano</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: -2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">🥋</span>
-              </div>
-              <h3>Martial Arts</h3>
-              <p>Practicing discipline, focus, and physical fitness through martial arts training</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Karate</span>
-                <span className="hobby-tag">Self-Defense</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: 2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">💃</span>
-              </div>
-              <h3>Dance</h3>
-              <p>Expressing creativity and staying energetic through various dance forms</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Hip-Hop</span>
-                <span className="hobby-tag">Contemporary</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: -2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">📚</span>
-              </div>
-              <h3>Reading</h3>
-              <p>Expanding knowledge through tech blogs, self-improvement books, and novels</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Tech Blogs</span>
-                <span className="hobby-tag">Fiction</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: 2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">🎮</span>
-              </div>
-              <h3>Gaming</h3>
-              <p>Enjoying strategy games and learning problem-solving through interactive experiences</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Strategy</span>
-                <span className="hobby-tag">Puzzle</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hobby-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotateZ: -2 }}
-            >
-              <div className="hobby-icon-wrapper">
-                <span className="hobby-icon">✈️</span>
-              </div>
-              <h3>Travel</h3>
-              <p>Exploring new places, cultures, and gaining diverse perspectives</p>
-              <div className="hobby-tags">
-                <span className="hobby-tag">Adventure</span>
-                <span className="hobby-tag">Culture</span>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Video Showcase Section */}
-        <motion.div className="videos-section" variants={itemVariants}>
-          <div className="section-divider">
-            <span className="divider-line"></span>
-            <span className="divider-text">Skills in Action</span>
-            <span className="divider-line"></span>
-          </div>
-
-          <div className="videos-header">
-            <h2 className="videos-title">
-              Video <span className="gradient-text">Showcase</span>
-            </h2>
-            <p className="videos-description">
-              Watch me in action! Here are some videos showcasing my skills beyond coding
-            </p>
-          </div>
-
-          <div className="videos-grid">
-            <motion.div
-              className="video-card interactive glass"
+              className="hobby-video-card interactive glass"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-thumbnail-wrapper">
-                <div className="video-wrapper">
-                  <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Dance Performance"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div className="video-overlay">
-                  <div className="play-icon">▶</div>
-                </div>
-              </div>
-              <div className="video-info">
-                <div className="video-category">Dance</div>
-                <h3>💃 Dance Performance</h3>
-                <p>Contemporary dance routine showcasing rhythm and creativity</p>
-                <div className="video-tags">
-                  <span className="video-tag">Dance</span>
-                  <span className="video-tag">Performance</span>
-                  <span className="video-tag">Creativity</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="video-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="video-thumbnail-wrapper">
-                <div className="video-wrapper">
-                  <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Martial Arts Demo"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div className="video-overlay">
-                  <div className="play-icon">▶</div>
-                </div>
-              </div>
-              <div className="video-info">
-                <div className="video-category">Martial Arts</div>
-                <h3>🥋 Martial Arts Demo</h3>
-                <p>Karate techniques and forms demonstration</p>
-                <div className="video-tags">
-                  <span className="video-tag">Martial Arts</span>
-                  <span className="video-tag">Discipline</span>
-                  <span className="video-tag">Fitness</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="video-card interactive glass"
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="video-thumbnail-wrapper">
+              <div className="video-container">
                 <div className="video-wrapper">
                   <iframe
                     src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -405,51 +222,172 @@ const AdditionalSkills = () => {
                     loading="lazy"
                   ></iframe>
                 </div>
-                <div className="video-overlay">
-                  <div className="play-icon">▶</div>
-                </div>
               </div>
-              <div className="video-info">
-                <div className="video-category">Music</div>
-                <h3>🎵 Music Performance</h3>
-                <p>Guitar cover of a popular song</p>
-                <div className="video-tags">
-                  <span className="video-tag">Music</span>
-                  <span className="video-tag">Guitar</span>
-                  <span className="video-tag">Cover</span>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">🎵</span>
+                  <h3>Music</h3>
+                </div>
+                <p>Playing instruments and exploring different genres keeps my creative mind active</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Guitar</span>
+                  <span className="hobby-tag">Piano</span>
+                  <span className="hobby-tag">Performance</span>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="video-card interactive glass"
+              className="hobby-video-card interactive glass"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="video-thumbnail-wrapper">
+              <div className="video-container">
                 <div className="video-wrapper">
                   <iframe
                     src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Project Demo"
+                    title="Martial Arts Demo"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     loading="lazy"
                   ></iframe>
                 </div>
-                <div className="video-overlay">
-                  <div className="play-icon">▶</div>
+              </div>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">🥋</span>
+                  <h3>Martial Arts</h3>
+                </div>
+                <p>Practicing discipline, focus, and physical fitness through martial arts training</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Karate</span>
+                  <span className="hobby-tag">Self-Defense</span>
+                  <span className="hobby-tag">Discipline</span>
                 </div>
               </div>
-              <div className="video-info">
-                <div className="video-category">Coding</div>
-                <h3>💻 Coding Project Demo</h3>
-                <p>Walkthrough of a full-stack MERN application</p>
-                <div className="video-tags">
-                  <span className="video-tag">Coding</span>
-                  <span className="video-tag">MERN Stack</span>
-                  <span className="video-tag">Full-Stack</span>
+            </motion.div>
+
+            <motion.div
+              className="hobby-video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+            >
+              <div className="video-container">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Dance Performance"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">💃</span>
+                  <h3>Dance</h3>
+                </div>
+                <p>Expressing creativity and staying energetic through various dance forms</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Hip-Hop</span>
+                  <span className="hobby-tag">Contemporary</span>
+                  <span className="hobby-tag">Creativity</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+            >
+              <div className="video-container">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Reading & Learning"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">📚</span>
+                  <h3>Reading</h3>
+                </div>
+                <p>Expanding knowledge through tech blogs, self-improvement books, and novels</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Tech Blogs</span>
+                  <span className="hobby-tag">Fiction</span>
+                  <span className="hobby-tag">Learning</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+            >
+              <div className="video-container">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Gaming Sessions"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">🎮</span>
+                  <h3>Gaming</h3>
+                </div>
+                <p>Enjoying strategy games and learning problem-solving through interactive experiences</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Strategy</span>
+                  <span className="hobby-tag">Puzzle</span>
+                  <span className="hobby-tag">Gaming</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hobby-video-card interactive glass"
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+            >
+              <div className="video-container">
+                <div className="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Travel Adventures"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="hobby-info">
+                <div className="hobby-header">
+                  <span className="hobby-icon">✈️</span>
+                  <h3>Travel</h3>
+                </div>
+                <p>Exploring new places, cultures, and gaining diverse perspectives</p>
+                <div className="hobby-tags">
+                  <span className="hobby-tag">Adventure</span>
+                  <span className="hobby-tag">Culture</span>
+                  <span className="hobby-tag">Exploration</span>
                 </div>
               </div>
             </motion.div>

@@ -1,7 +1,7 @@
 .skills {
   min-height: 100vh;
   padding: 120px 5%;
-  background: var(--dark);
+  background: linear-gradient(180deg, var(--dark) 0%, #0f1729 50%, #1a1f3a 100%);
   position: relative;
   overflow: hidden;
 }
@@ -13,9 +13,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  background:
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 45%);
   pointer-events: none;
+  animation: skillsBgShift 20s ease-in-out infinite;
+}
+
+@keyframes skillsBgShift {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.7; transform: translateY(-20px); }
 }
 
 .skills-container {
@@ -49,22 +57,25 @@
 
 .category-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .category-header h3 {
-  font-size: 32px;
+  font-size: 34px;
   color: var(--light);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 900;
+  letter-spacing: 0.5px;
 }
 
 .category-header p {
   font-size: 16px;
   color: var(--gray);
+  line-height: 1.6;
 }
 
 .skills-list {
@@ -74,65 +85,73 @@
 }
 
 .skill-card {
-  padding: 25px;
-  transition: all 0.3s ease;
+  padding: 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
 
 .skill-card:hover {
-  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+  transform: translateY(-5px);
 }
 
 .skill-header {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .skill-icon {
-  font-size: 40px;
+  font-size: 48px;
   flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .skill-info h4 {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--light);
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-info h4 {
+  color: #e0e7ff;
 }
 
 .skill-info p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--gray);
-  line-height: 1.5;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
-.skill-progress {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.progress-bar {
-  flex: 1;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 10px;
-  position: relative;
-  box-shadow: 0 0 10px currentColor;
-}
-
-.progress-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--light);
-  min-width: 45px;
-  text-align: right;
+.skill-card:hover .skill-info p {
+  color: #cbd5e1;
 }
 
 .skills-cta {
@@ -141,21 +160,45 @@
 
 .cta-content {
   display: inline-block;
-  padding: 50px 60px;
-  max-width: 600px;
+  padding: 55px 65px;
+  max-width: 650px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta-content:hover::before {
+  opacity: 1;
 }
 
 .cta-content h3 {
-  font-size: 28px;
+  font-size: 30px;
   color: var(--light);
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-content p {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--gray);
-  margin-bottom: 30px;
-  line-height: 1.6;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1024px) {
